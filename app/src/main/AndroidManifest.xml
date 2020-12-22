@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.beamin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/main_img"
+        android:label="POSTEAT"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="1d204ebddb8f12830706627e1c74b475" />
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SignupActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MenuListActivity" />
+        <activity android:name=".activity.SignupPhoneActivity" />
+        <activity android:name=".activity.MapSearchActivity"></activity>
+        <activity android:name=".activity.MapResultActivity"></activity>
+        <activity
+            android:name=".activity.MenuDetailActivity"
+            android:exported="true"></activity>
+    </application>
+
+</manifest>
