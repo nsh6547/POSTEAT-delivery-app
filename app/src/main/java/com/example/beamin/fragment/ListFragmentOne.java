@@ -75,7 +75,7 @@ public class ListFragmentOne extends Fragment {
                     int key = arr.getJSONObject(i).getInt("restaurantNumber");
                     menuListAdapter.addList(img,name,menu,key);
                 }
-            } catch (JSONException e) {
+            } catch (JSONException | NoSuchFieldException | IllegalAccessException e) {
                 e.printStackTrace();
             }
             //Json Passing

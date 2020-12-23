@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         context = getApplicationContext();
 
         lat = 37.505620;
@@ -60,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         autoViewPager.setAdapter(scrollAdapter);
         autoViewPager.setInterval(3000);
         autoViewPager.startAutoScroll();
+
+
         //View Pager Set
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);

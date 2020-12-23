@@ -1,6 +1,7 @@
 package com.example.beamin.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,12 @@ import com.bumptech.glide.request.RequestOptions;
 
 import com.example.beamin.R;
 import com.example.beamin.data.MenuData;
+
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class MenuListAdapter extends BaseAdapter {
+    Class<R.drawable> drawable = R.drawable.class;
 
     public ArrayList<MenuData> itemList = new ArrayList<>();
     public String id;
@@ -89,8 +93,11 @@ public class MenuListAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void addList(int url, String name,String menu,int key){
-        MenuData item = new MenuData(url,name,menu);
+    public void addList(int url, String name,String menu,int key) throws NoSuchFieldException, IllegalAccessException {
+        Field field;
+        field = drawable.getField("a" + key);
+        int imgurl = field.getInt(null);
+        MenuData item = new MenuData(imgurl,name,menu);
         item.numId=key;
         itemList.add(item);
     }

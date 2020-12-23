@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/emotionView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".activity.EmotionActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <ImageView
+                android:id="@+id/emotion_back_tv"
+                android:layout_marginLeft="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back_icon"
+                android:layout_gravity="center_vertical"
+                />
+            <TextView
+                android:id="@+id/emotion_store_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:text="음식 추천"
+                android:textColor="#323232"
+                android:fontFamily="@font/note_medium"
+                />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/emotionimage"
+            android:layout_width="wrap_content"
+            android:scaleType="fitCenter"
+            android:layout_height="400sp"
+            android:src="@drawable/emotion_init_img"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <ImageView
+
+                android:id="@+id/emotion_button"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:clickable="true"
+                android:layout_marginEnd="70sp"
+                android:src="@drawable/emotion_picture_upload_img" />
+
+            <ImageView
+                android:id="@+id/emotion_picture_upload_imageview"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:src="@drawable/emotion_take_pic_img"
+                android:text="사진 가져오기" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60sp"
+                android:text="앨범에서 가져오기" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="98sp"
+                android:text="감정 분석" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -78,6 +78,10 @@ public class ListFragmentFour extends Fragment {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
             }
             menuListAdapter.notifyDataSetChanged();
             MenuListActivity.activity.runOnUiThread(new Runnable() {
