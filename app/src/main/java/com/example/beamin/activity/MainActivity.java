@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         addressTv=findViewById(R.id.content_main_address_tv);
         addressTv.setOnClickListener(this);
-        addressTv.setText("목2동 534-29");
+        addressTv.setText("경북 포항시 남구 지곡동산 260-1");
         //address set
 
         GridLayout grid = (GridLayout) findViewById(R.id.grid_list);
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onStart() {
         super.onStart();
         SharedPreferences pref = getSharedPreferences("map", MODE_PRIVATE);
-        String tmp = pref.getString("addressMain", "");
+        String tmp = pref.getString("addressMain", null);
         if(tmp!=null){
             String _tmp = "";
             int k=0;
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             //login 성공
         }
         SharedPreferences pref = getSharedPreferences("map", MODE_PRIVATE);
-        String tmp = pref.getString("addressMain", "");
+        String tmp = pref.getString("addressMain", null);
         if(tmp!=null){
             addressTv.setText(tmp);
         }

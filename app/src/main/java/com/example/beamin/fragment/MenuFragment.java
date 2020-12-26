@@ -82,21 +82,18 @@ public class MenuFragment extends Fragment {
                     String price = String.valueOf(arr.getJSONObject(i).getInt("price"));
                     menuDetailListAdapter.addList(0, menu,price);
                 }
+                MenuListActivity.activity.runOnUiThread(new Runnable() {
+                    public void run() {
+                        MenuDetailActivity.detailActivity.nameTv.setText(name);
+                        MenuDetailActivity.detailActivity.minTv.setText(min+"원");
+                        MenuDetailActivity.detailActivity.payHowTv.setText(pay);
+                        menuDetailListAdapter.notifyDataSetChanged();
+                        listView.setAdapter(menuDetailListAdapter);
+                    }
+                });
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //Json Passing
-
-            MenuListActivity.activity.runOnUiThread(new Runnable() {
-                public void run() {
-                    MenuDetailActivity.detailActivity.nameTv.setText(name);
-                    MenuDetailActivity.detailActivity.minTv.setText(min+"원");
-                    MenuDetailActivity.detailActivity.payHowTv.setText(pay);
-                    menuDetailListAdapter.notifyDataSetChanged();
-                    listView.setAdapter(menuDetailListAdapter);
-                }
-            });
-            //use runOnUiThread for callback function
         }
     };
 }

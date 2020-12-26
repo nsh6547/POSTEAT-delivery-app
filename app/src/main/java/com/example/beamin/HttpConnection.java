@@ -28,7 +28,7 @@ public class HttpConnection {
     public void signUp(String id, String pw, String name,String age_group, String gender, Callback callback) throws JSONException { //POST
         HttpUrl url = new HttpUrl.Builder()
                 .scheme("http")
-                .host("192.168.0.14")
+                .host("175.121.94.182")
                 .port(2555)
                 .addPathSegment("signup")
                 .build();
@@ -100,7 +100,7 @@ public class HttpConnection {
     public void login(String id, String pw,Callback callback) throws JSONException {
         HttpUrl url = new HttpUrl.Builder()
                 .scheme("http")
-                .host("192.168.0.14")
+                .host("175.121.94.182")
                 .port(2555)
                 .addPathSegment("login")
                 .build();
@@ -138,7 +138,7 @@ public class HttpConnection {
     public void menuList(String query, Callback callback) throws JSONException {
         HttpUrl url = new HttpUrl.Builder()
                 .scheme("http")
-                .host("192.168.0.14")
+                .host("175.121.94.182")
                 .port(2555)
                 .addPathSegment("menuList")
                 .build();
@@ -161,7 +161,7 @@ public class HttpConnection {
         if(a == 1){
             HttpUrl url = new HttpUrl.Builder()
                     .scheme("http")
-                    .host("192.168.0.14")
+                    .host("175.121.94.182")
                     .port(2555)
                     .addPathSegment("menuDetail")
                     .build();
@@ -181,7 +181,7 @@ public class HttpConnection {
         }else{
             HttpUrl url = new HttpUrl.Builder()
                     .scheme("http")
-                    .host("192.168.0.14")
+                    .host("175.121.94.182")
                     .port(2555)
                     .addPathSegment("menuDetail")
                     .addPathSegment("menu")
@@ -201,5 +201,40 @@ public class HttpConnection {
             client.newCall(request).enqueue(callback);
         }
 
+    }
+    public void ranking(Callback callback) {
+        HttpUrl url = new HttpUrl.Builder()
+                .scheme("http")
+                .host("175.121.94.182")
+                .port(2555)
+                .addPathSegment("ranking")
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        client.newCall(request).enqueue(callback);
+    }
+    public void emotion_result(String query1, String query2, Callback callback) throws JSONException {
+        HttpUrl url = new HttpUrl.Builder()
+                .scheme("http")
+                .host("175.121.94.182")
+                .port(2555)
+                .addPathSegment("emotionresult")
+                .build();
+        JSONObject object = new JSONObject();
+
+        object.put("category1", query1);
+        object.put("category2", query2);
+        RequestBody requestBody = RequestBody.create(
+                MediaType.parse("application/json; charset=utf-8"),
+                object.toString()
+        );
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+        client.newCall(request).enqueue(callback);
     }
 }

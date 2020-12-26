@@ -37,7 +37,7 @@
 
         <ImageView
             android:id="@+id/emotionimage"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:scaleType="fitCenter"
             android:layout_height="400sp"
             android:src="@drawable/emotion_init_img"

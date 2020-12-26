@@ -24,6 +24,7 @@ import com.example.beamin.R;
 import com.example.beamin.fragment.CustomProgress;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,6 +34,7 @@ public class EmotionActivity extends AppCompatActivity implements View.OnClickLi
     ImageView emotion_back_view;
     ImageView imageView, upload_img_button, image_upload_button;
     String imagePath;
+    int result_data;
 
 
     @Override
@@ -98,9 +100,11 @@ public class EmotionActivity extends AppCompatActivity implements View.OnClickLi
         protected Boolean doInBackground(String... params) {
 
             try {
-                JSONObject jsonObject = JSONParser.uploadImage(params[0]);
-                if (jsonObject != null)
-                    return jsonObject.getString("result").equals("success");
+                JSONObject arr = JSONParser.uploadImage(params[0]);
+                if (arr != null)
+                    Log.d("데이터 받아오기", arr.getJSONObject("data").getString("result_data"));
+                    result_data = arr.getJSONObject("data").getInt("result_data");
+                    return arr.getJSONObject("data").getString("results").equals("success");
 
             } catch (JSONException e) {
                 Log.i("TAG", "Error : " + e.getLocalizedMessage());
@@ -111,15 +115,15 @@ public class EmotionActivity extends AppCompatActivity implements View.OnClickLi
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             super.onPostExecute(aBoolean);
-            if (progressDialog != null)
-                progressDialog.dismiss();
+            progressDialog.cancel();
 
             if (aBoolean)
                 Toast.makeText(getApplicationContext(), "파일 업로드 성공", Toast.LENGTH_LONG).show();
             else
                 Toast.makeText(getApplicationContext(), "파일 업로드 실패", Toast.LENGTH_LONG).show();
-
-            imagePath = "";
+            Intent intent = new Intent(getApplicationContext(), EmotionResultActivity.class);
+            intent.putExtra("key", result_data);
+            startActivity(intent);
         }
     }
 

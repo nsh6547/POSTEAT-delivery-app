@@ -34,7 +34,7 @@ public class MenuDetailActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_detail);
 
-        detailActivity=this;
+        detailActivity = this;
         activity = this;
 
         nameTv = findViewById(R.id.menu_detail_store_tv);

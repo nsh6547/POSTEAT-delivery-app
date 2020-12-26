@@ -2,6 +2,7 @@ package com.example.beamin;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -20,7 +21,7 @@ public class JSONParser {
     public static JSONObject uploadImage(String sourceImageFile) {
         HttpUrl url = new HttpUrl.Builder()
                 .scheme("http")
-                .host("192.168.0.14")
+                .host("175.121.94.182")
                 .port(2555)
                 .addPathSegment("imgupload")
                 .build();
