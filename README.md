@@ -21,4 +21,4 @@ collaboration Server
 3. 현 위치 기반 음식점 리스트 제공
  - KAKAO MAP API 사용하여 주변 음식점 리스트 제공 
 
-### 모델의 정확도 및 논문등 자세한 내용은 A1_AI_Project_FINAL.pptx 및 A1_AI_Project_report  를 참고하세요.
+### 모델의 정확도 및 논문등 자세한 내용은 A1_AI_Project_FINAL.pptx 및 A1_AI_Project_report.docx  를 참고하세요.
