@@ -7,17 +7,18 @@
 collaboration Server
 - Use Api created by server developer to use OKHttp and Passing JSON
 
-Android
-- Navigation Bar
-- Advertisement auto scrool to use ViewPager
-- Return Fragment that position to use tablayout and viewpager
-- When print listview to read information of server
-- Read Store List information and that Store menu and information
-- Else Exception Handling
-
-
 -----------------------------------------------------------
 
-포스코 AI/BIGDATA AI프로젝트
+포스코 AI/BIGDATA 12기 AI프로젝트
 
-딥러닝을 이용한 감정분석후 음식추천 서비스가 추가된 배달앱
+배달의 민족과 유사한 배달 앱 구현 
+
+주요기능 
+1. 실시간 감정 분석 후 음식점 추천
+ - CNN VGG-13, 논문 및 설문조사를 토대로 감정과 음식 매칭
+2. 음식점 랭킹 순위
+ - DATABASE에 있는 모든 음식점의 리뷰수 기준 상위 5개의 랭킹
+3. 현 위치 기반 음식점 리스트 제공
+ - KAKAO MAP API 사용하여 주변 음식점 리스트 제공 
+
+### 모델의 정확도 및 논문등 자세한 내용은 A1_AI_Project_FINAL.pptx 를 참고하세요.
